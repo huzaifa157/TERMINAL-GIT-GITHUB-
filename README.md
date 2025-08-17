@@ -45,79 +45,74 @@ git config --global init.defaultBranch main
 
 `git init`  # Initialize new repository
 
-#🔄 Common Workflow
+# 🔄 Common Workflow
 
-`git add .`                      # Stage changes
-`git commit -m "message"`        # Commit
-`git remote add origin repo_url`  # Connect to GitHub
-`git push -u origin main `       # Push
+`git add .`                      # Stage changes  
+`git commit -m "message"`        # Commit  
+`git remote add origin repo_url`  # Connect to GitHub  
+`git push -u origin main`        # Push  
 
 📊 File Stages in Git
 
-`Untracked` → Not in Git
-
-`Staged` → Added with git add
-
-`Committed` → Saved locally
-
-`Pushed` → Uploaded to GitHub
+`Untracked` → Not in Git  
+`Staged` → Added with git add  
+`Committed` → Saved locally  
+`Pushed` → Uploaded to GitHub  
 
 🌿 Branching
 
-`git branch `             # List branches
-`git checkout branch`     # Switch branch
-`git checkout -b new`     # Create + switch
-`git branch -d branch`    # Delete branch
-`git merge branch`        # Merge branch
-
+`git branch`             # List branches  
+`git checkout branch`    # Switch branch  
+`git checkout -b new`    # Create + switch  
+`git branch -d branch`   # Delete branch  
+`git merge branch`       # Merge branch  
 
 ♻️ Undoing Changes
 
-##Unstage file
+Unstage file:
 
-`git reset file_name`
-`git reset`   # Unstage all
+`git reset file_name`  
+`git reset`   # Unstage all  
 
+Undo last commit:
 
-Undo last commit
+`git reset HEAD~1`  
 
-`git reset HEAD~1`
+Hard reset (⚠️ danger):
 
-Hard reset (⚠️ danger)
-
-`git reset --hard commit_id`
+`git reset --hard commit_id`  
 
 🔗 Git vs GitHub
 
-Git → Local version control system 🖥
-
-GitHub → Cloud hosting platform ☁️
+Git → Local version control system 🖥  
+GitHub → Cloud hosting platform ☁️  
 
 🚀 Complete Setup Example
-# First time setup
-git config --global user.name "Your Name"
-git config --global user.email "your@email.com"
 
-# New project
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/username/repo.git
-git push -u origin main
+First time setup:
 
-# Existing project
-git clone https://github.com/username/repo.git
-cd repo
+`git config --global user.name "Your Name"`  
+`git config --global user.email "your@email.com"`  
+
+New project:
+
+`git init`  
+`git add .`  
+`git commit -m "Initial commit"`  
+`git remote add origin https://github.com/username/repo.git`  
+`git push -u origin main`  
+
+Existing project:
+
+`git clone https://github.com/username/repo.git`  
+`cd repo`  
 
 💡 Tips
 
-git commit -am "msg" → Add & commit tracked files in one step
-
-git log --oneline → Compact history
-
-git branch -m old new → Rename branch
-
-git stash → Temporarily save changes
+`git commit -am "msg"` → Add & commit tracked files in one step  
+`git log --oneline` → Compact history  
+`git branch -m old new` → Rename branch  
+`git stash` → Temporarily save changes  
 
 ✨ These notes are designed as a quick reference for students & developers learning Git, GitHub, and terminal basics.
 
