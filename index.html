@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>⚡ Terminal & Git/GitHub Cheat Sheet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>⚡ Terminal &amp; Git/GitHub Cheat Sheet</h1>
+      <p class="muted">A concise reference for <strong>Terminal commands</strong>, <strong>Git essentials</strong>, and <strong>GitHub workflows</strong>.</p>
+    </header>
+
+    <section class="card">
+      <h2 id="table-of-contents">📑 Table of Contents</h2>
+      <nav class="toc">
+        <a href="#terminal-basics">💻 Terminal Basics</a>
+        <a href="#git-fundamentals">🌱 Git Fundamentals</a>
+        <a href="#git-vs-github">🔗 Git vs GitHub</a>
+        <a href="#complete-workflow-example">🚀 Complete Workflow Example</a>
+        <a href="#pro-tips">💡 Pro Tips</a>
+      </nav>
+    </section>
+
+    <hr/>
+
+    <section id="terminal-basics" class="card">
+      <h2>💻 Terminal Basics</h2>
+
+      <h3>📂 Navigation &amp; Files</h3>
+      <table>
+        <thead>
+          <tr><th>Command</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>ls</code></td><td>List files</td></tr>
+          <tr><td><code>ls -la</code></td><td>List all files (including hidden) with details</td></tr>
+          <tr><td><code>pwd</code></td><td>Show current directory path</td></tr>
+          <tr><td><code>cd [dir]</code></td><td>Change directory</td></tr>
+          <tr><td><code>cd ..</code></td><td>Move up one level</td></tr>
+          <tr><td><code>mkdir [name]</code></td><td>Create new directory</td></tr>
+          <tr><td><code>touch file1 file2</code></td><td>Create new files</td></tr>
+          <tr><td><code>rm [file]</code></td><td>Delete file</td></tr>
+          <tr><td><code>rm -rf [dir]</code></td><td>Force delete directory <span class="tag">⚠️ irreversible</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3>⌨️ Shortcuts</h3>
+      <ul>
+        <li><code>Tab</code> → Auto-complete file/directory names</li>
+        <li><code>↑ / ↓</code> → Navigate command history</li>
+        <li><code>Ctrl + C</code> → Stop current process</li>
+      </ul>
+    </section>
+
+    <hr/>
+
+    <section id="git-fundamentals" class="card">
+      <h2>🌱 Git Fundamentals</h2>
+
+      <h3>⚙️ First-Time Setup</h3>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --global init.defaultBranch main</code></pre>
+
+      <h3>📂 Starting a Project</h3>
+      <pre><code>git init   # Initialize new repository</code></pre>
+
+      <h3>🔄 Common Workflow</h3>
+      <pre><code>git add .                      # Stage changes
+git commit -m "message"        # Commit
+git remote add origin repo_url # Connect to GitHub
+git push -u origin main        # Push</code></pre>
+
+      <h3>📊 File Stages in Git</h3>
+      <ul>
+        <li><strong>Untracked</strong> → Not in Git</li>
+        <li><strong>Staged</strong> → Added with <code>git add</code></li>
+        <li><strong>Committed</strong> → Saved locally</li>
+        <li><strong>Pushed</strong> → Uploaded to GitHub</li>
+      </ul>
+
+      <h3>🌿 Branching</h3>
+      <pre><code>git branch              # List branches
+git checkout branch     # Switch branch
+git checkout -b new     # Create + switch
+git branch -d branch    # Delete branch
+git merge branch        # Merge branch</code></pre>
+
+      <h3>♻️ Undoing Changes</h3>
+      <p><strong>Unstage file</strong></p>
+      <pre><code>git reset file_name
+git reset   # Unstage all</code></pre>
+
+      <p><strong>Undo last commit</strong></p>
+      <pre><code>git reset HEAD~1</code></pre>
+
+      <p><strong>Hard reset (⚠️ danger)</strong></p>
+      <pre><code>git reset --hard commit_id</code></pre>
+    </section>
+
+    <hr/>
+
+    <section id="git-vs-github" class="card">
+      <h2>🔗 Git vs GitHub</h2>
+      <ul>
+        <li><strong>Git</strong> → Local version control system 🖥</li>
+        <li><strong>GitHub</strong> → Cloud hosting platform ☁️</li>
+      </ul>
+    </section>
+
+    <hr/>
+
+    <section id="complete-workflow-example" class="card">
+      <h2>🚀 Complete Workflow Example</h2>
+
+      <h3>🔧 First Time Setup</h3>
+      <pre><code>git config --global user.name "Your Name"
+git config --global user.email "your@email.com"</code></pre>
+
+      <h3>🆕 New Project</h3>
+      <pre><code>git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/username/repo.git
+git push -u origin main</code></pre>
+
+      <h3>📥 Existing Project</h3>
+      <pre><code>git clone https://github.com/username/repo.git
+cd repo</code></pre>
+    </section>
+
+    <hr/>
+
+    <section id="pro-tips" class="card">
+      <h2>💡 Pro Tips</h2>
+      <pre><code>git commit -am "msg"    # Add & commit tracked files in one step
+git log --oneline       # Compact history
+git branch -m old new   # Rename branch
+git stash               # Temporarily save changes</code></pre>
+
+
+<hr/>
+
+<section id="advanced-git" class="card">
+  <h2>⚡ Advanced Git Concepts</h2>
+
+  <h3>🚀 Squash Commits (Clean History)</h3>
+  <pre><code>git rebase -i HEAD~5   # Combine last 5 commits
+# mark commits as "squash" or "fixup"</code></pre>
+  <p class="muted">📌 Useful before merging PRs to keep history clean.</p>
+
+  <h3>🎯 Cherry-Pick (Pick a Commit from Another Branch)</h3>
+  <pre><code>git checkout feature
+git cherry-pick abc123</code></pre>
+  <p class="muted">✅ Apply a specific bugfix commit without merging the whole branch.</p>
+
+  <h3>🏷 Tags & Semantic Versioning</h3>
+  <pre><code>git tag -a v1.2.0 -m "Release v1.2.0"
+git push origin v1.2.0</code></pre>
+  <p class="muted">🚀 Commonly used for production releases & CI/CD pipelines.</p>
+
+  <h3>📦 Stash Advanced</h3>
+  <pre><code>git stash push -m "WIP: feature-x"
+git stash list
+git stash apply stash@{1}</code></pre>
+  <p class="muted">💡 Save unfinished work temporarily without committing.</p>
+
+  <h3>🔍 Search in Git History</h3>
+  <pre><code>git log -S "functionName"   # Find commits where code was added/removed
+git grep "keyword"          # Search keyword in repo files</code></pre>
+
+  <h3>🧹 Clean Up Local Branches</h3>
+  <pre><code>git fetch -p    # Prune deleted remote branches
+git branch -vv  # See tracking branches
+git branch -d old-branch</code></pre>
+
+  <h3>⚡ GitHub CLI Power</h3>
+  <pre><code>gh repo fork repo-url        # Fork a repo
+gh pr create --web           # Open PR in browser
+gh pr merge 123 --squash     # Merge PR #123 with squash</code></pre>
+</section>
+
+
+      <p class="muted">✨ These notes are designed as a quick reference for students &amp; developers learning Git, GitHub, and terminal basics.</p>
+    </section>
+
+    
+  </main>
+</body>
+</html>
